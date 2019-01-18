@@ -127,5 +127,44 @@ let magic = {
         return 4 * pump;
       }
     }
+  },
+  pyroBall: function(){
+  if(this.stats.mp >= 6){
+    this.stats.mp = this.stats.mp - 6;
+    let baseDamage = this.stats.mp * 0.88;
+    let bonus = 0.32 * this.stats.atk * Math.random();
+    return baseDamage + bonus;
+    }
+  },
+  lightningSlap: function(){
+    if(this.stats.mp >= 10){
+      this.stats.mp = this.stats.mp - 10;
+      let baseDamage = this.stats.mp * 0.66;
+      let bonus = 0.84 * this.stats.atk * Math.random();
+      return baseDamage + bonus;
+    }
+  },
+  hyperBeam: function(){
+    if(this.stats.mp >= 20){
+      this.stats.mp = this.stats.mp - 20;
+      let baseDamage = this.stats.mp * 1.5;
+      let bonus = 1.5 * this.stats.atk * Math.random();
+      return baseDamage + bonus;
+    }
+  },
+  shadowClaw: function(){
+    if(this.stats.mp >= 6){
+      this.stats.mp = this.stats.mp - 6;
+      let baseDamage = 1 * this.stats.atk;
+      let bonus = 0.5 * this.stats.atk * Math.random();
+      return baseDamage + bonus;
+    }
+    if(pain < 0.50){
+      this.stats.hp = this.stats.hp - this.stats.atk/4;
+      return this.stats.atk + bonus;
+    }
+    else{
+      return this.stats.atk + bonus;
+    }
   }
 }
